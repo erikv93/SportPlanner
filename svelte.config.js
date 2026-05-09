@@ -7,7 +7,7 @@ const base = process.env.GITHUB_PAGES === 'true' && repo ? `/${repo}` : '';
 
 export default {
   kit: {
-    adapter: adapter(),
+    adapter: adapter({ fallback: 'index.html' }),
     paths: {
       base
     }
