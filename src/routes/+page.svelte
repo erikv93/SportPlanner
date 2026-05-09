@@ -211,7 +211,7 @@
 								<span class="emoji no-print">{activityMap[current].emoji}</span>
 								<span class="label">{activityMap[current].label}</span>
 							</td>
-						</tr>
+							</tr>
 					{/each}
 				</tbody>
 			</table>
@@ -235,155 +235,130 @@
 	:global(html, body) {
 		margin: 0;
 		padding: 0;
-		background-color: #f0f4f8;
-		font-family: 'Segoe UI', system-ui, sans-serif;
+		background-color: #e6e6e6;
+		font-family: Arial, Helvetica, sans-serif;
+		color: #222;
+		font-size: 13px;
 	}
 
-    @media print {
-        :global(body) {
-            background-color: white !important;
-            -webkit-print-color-adjust: exact;
-            print-color-adjust: exact;
-        }
-        
-        .no-print {
-            display: none !important;
-        }
-        
-        .print-only {
-            display: block !important;
-            margin-bottom: 20px;
-            font-size: 20pt;
-        }
+	@media print {
+		:global(body) {
+			background-color: white !important;
+			-webkit-print-color-adjust: exact;
+			print-color-adjust: exact;
+		}
+		
+		.no-print {
+			display: none !important;
+		}
+		
+		.print-only {
+			display: block !important;
+			margin-bottom: 20px;
+			font-size: 20pt;
+		}
 
-        .container {
-            padding: 0 !important;
-            display: block !important;
-        }
+		.container {
+			padding: 0 !important;
+			display: block !important;
+		}
 
-        .card {
-            box-shadow: none !important;
-            border: none !important;
-            width: 100% !important;
-            padding: 0 !important;
-        }
+		.card {
+			box-shadow: none !important;
+			border: none !important;
+			width: 100% !important;
+			padding: 0 !important;
+		}
 
-        table {
-            width: 100%;
-            border: 1.5pt solid #000 !important; /* Buitenste dikke rand */
-            border-collapse: collapse !important;
-        }
+		table {
+			width: 100%;
+			border: 1.5pt solid #000 !important; /* Buitenste dikke rand */
+			border-collapse: collapse !important;
+		}
 
-        th, td {
-            /* Verticale en horizontale lijnen voor het rooster-effect */
-            border: 1pt solid #000 !important; 
-            color: black !important;
-            padding: 8pt !important;
-            background-color: transparent !important;
-        }
+		th, td {
+			/* Verticale en horizontale lijnen voor het rooster-effect */
+			border: 1pt solid #000 !important; 
+			color: black !important;
+			padding: 8pt !important;
+			background-color: transparent !important;
+		}
 
-        th {
-            background-color: #f2f2f2 !important;
-            text-transform: uppercase;
-            font-size: 10pt;
-        }
+		th {
+			background-color: #f2f2f2 !important;
+			text-transform: uppercase;
+			font-size: 10pt;
+		}
 
-        /* Haal badge-styling weg voor print */
-        .tag {
-            background: transparent !important;
-            border: none !important;
-            padding: 0 !important;
-            color: black !important;
-            font-weight: normal !important;
-            font-size: medium !important;
-        }
+		/* Haal badge-styling weg voor print */
+		.tag {
+			background: transparent !important;
+			border: none !important;
+			padding: 0 !important;
+			color: black !important;
+			font-weight: normal !important;
+			font-size: medium !important;
+		}
 
-        .activity-cell {
-            color: black !important;
-            font-weight: normal !important;
-        }
+		.activity-cell {
+			color: black !important;
+			font-weight: normal !important;
+		}
 
-        .is-weekend {
-            background-color: transparent !important;
-        }
-    }
-
-    /* Web-only styles */
-    .print-only {
-        display: none;
-    }
-
-	.container {
-		display: flex;
-		justify-content: center;
-		padding: 1.5rem;
+		.is-weekend {
+			background-color: transparent !important;
+		}
 	}
+
+	/* Web-only styles (old-school business look) */
+	.print-only { display: none; }
+
+	.container { display: flex; justify-content: center; padding: 1rem; }
 
 	.card {
-		background: white;
+		background: #fff;
 		width: 100%;
-		max-width: 650px;
-		padding: 2rem;
-		border-radius: 1.25rem;
-		box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+		max-width: 800px;
+		padding: 1rem;
+		border: 1px solid #a7a7a7;
+		box-shadow: none;
 	}
 
-    header { margin-bottom: 2rem; text-align: center; }
-    h1 { margin: 0; color: #1a202c; font-size: 1.75rem; }
+	header { margin-bottom: 1rem; text-align: center; }
+	h1 { margin: 0; color: #1a202c; font-size: 1.25rem; }
 
-	.office-selector {
-		display: flex;
-		gap: 0.75rem;
-		margin-bottom: 2rem;
-	}
+	.office-selector { display: flex; gap: 0.5rem; margin-bottom: 0.75rem; }
 
 	.day-btn {
 		flex: 1;
-		padding: 0.85rem;
-		border: 2px solid #edf2f7;
-		background: white;
-		border-radius: 0.75rem;
+		padding: 0.6rem;
+		border: 1px solid #7f8c8d;
+		background: linear-gradient(#ffffff, #dfe7eb);
+		border-radius: 2px;
 		cursor: pointer;
 		font-weight: 700;
-		transition: all 0.2s ease;
+		box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), 0 1px 0 rgba(0,0,0,0.05);
 	}
 
-	.day-btn.active {
-		background: #4f46e5;
-		color: white;
-		border-color: #4f46e5;
-	}
+	.day-btn.active { background: #c5c8ca; color: #000; border-color: #6b6f72; }
 
-	table { width: 100%; border-collapse: collapse; }
+	table { width: 100%; border-collapse: collapse; border:1px solid #777; }
 	th {
-		padding: 0.75rem 1rem;
-		text-align: left;
-		font-size: 0.75rem;
-		text-transform: uppercase;
-		color: #a0aec0;
-		border-bottom: 2px solid #f7fafc;
+		padding: 0.5rem 0.75rem; text-align: left; font-size: 12px; text-transform: uppercase; color: #000;
+		background: linear-gradient(#d0d7de, #f6f8f9); border-bottom: 1px solid #777; box-shadow: inset 0 -1px 0 rgba(255,255,255,0.6);
 	}
 
-	td { padding: 1rem; border-bottom: 1px solid #f7fafc; }
-    .is-weekend { background-color: #fffaf0; }
+	td { padding: 0.75rem; border-bottom: 1px solid #ddd; }
+	.is-weekend { background-color: #fffaf0; }
 
-    .activity-cell {
-        color: var(--act-color);
-        font-weight: bold;
-    }
+	.activity-cell { color: var(--act-color); font-weight: bold; }
 
-	.tag {
-		padding: 0.35rem 0.6rem;
-		border-radius: 0.5rem;
-		font-size: 0.8rem;
-		font-weight: 600;
-	}
-
+	.tag { padding: 0.25rem 0.5rem; border-radius: 2px; font-size: 0.8rem; font-weight: 600; }
 	.tag.office { background: #edf2f7; color: #4a5568; }
 	.tag.home { background: #c6f6d5; color: #22543d; }
 
 	/* Footer rules (web only, light grey) */
-	.rules { color: #94a3b8; font-size: 0.9rem; margin-bottom: 0.5rem; text-align: left; margin-top: 2rem; }
+	.rules { color: #94a3b8; font-size: 0.9rem; margin-bottom: 0.5rem; text-align: left; margin-top: 1rem; }
 	.rules strong { display: block; margin-bottom: 0.25rem; color: #64748b; }
 	.rules ul { margin: 0; padding-left: 1.1rem; }
 	.rules li { margin: 0.15rem 0; }
